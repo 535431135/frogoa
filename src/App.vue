@@ -1,9 +1,11 @@
 <template>
   <div id="app">
 <Header></Header>
+    <div class="main">
     <keep-alive>
  <router-view></router-view>
     </keep-alive>
+    </div>
   </div>
 </template>
 
@@ -49,4 +51,7 @@ li {
 a {
   color: #42b983;
 }
+  .main{
+    width: 100%;
+  }
 </style>

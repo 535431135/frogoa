@@ -1,0 +1,11 @@
+.common-btn{
+  width: 300px;
+  margin: 10px;
+}
+.el-btn{
+  width:100px;
+}
+.container{
+  margin-top: 10px;
+  height: 600px;
+}

@@ -25,8 +25,12 @@
       <el-menu-item index="4">公告管理</el-menu-item>
       <el-menu-item index="/organization">组织架构</el-menu-item>
       <el-menu-item index="4">更多功能</el-menu-item>
+      <el-submenu index="sys">
+      <template slot="title">系统设置</template>
+      <el-menu-item index="role">角色管理</el-menu-item>
+      <el-menu-item index="user">用户管理</el-menu-item>
+      </el-submenu>
     </el-menu>
-
     </div>
 
     <div class="line"></div>

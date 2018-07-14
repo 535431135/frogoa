@@ -1,104 +1,61 @@
 <template>
   <div class="organization">
     <div class="left">
-      <el-dropdown>
-  <span class="el-dropdown-link">
-    下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
-  </span>
-        <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>黄金糕</el-dropdown-item>
-          <el-dropdown-item>狮子头</el-dropdown-item>
-          <el-dropdown-item>螺蛳粉</el-dropdown-item>
-          <el-dropdown-item disabled>双皮奶</el-dropdown-item>
-          <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown>
+      <span>部门列表:</span>
+      <div class="deptList">
+        <ul>
+         <router-link to="/home"> <li>市场部</li></router-link>
+          <li>市场部</li>
+          <li>市场部</li>
+          <li>市场部</li>
+          <li>市场部</li>
+          <li>市场部</li>
+          <li>市场部</li>
+          <li>市场部</li>
+          <li>市场部</li>
+          <li>市场部</li>
+          <li>市场部</li>
+          <li>市场部</li>
+          <li>市场部</li>
+          <li>市场部</li>
+          <li>市场部</li>
+          <li>市场部</li>
+          <li>市场部</li>
+          <li>市场部</li>
+        </ul>
+      </div>
     </div>
-    <div class="right">
-    <i class="el-icon-location-outline"></i>    当前位置:<br/>
-     <span style="color: red">*</span>手机号码: <el-input  class="organization-btn" placeholder="请输入内容"></el-input><br/>
-      员工姓名: <el-input  class="organization-btn" placeholder="请输入内容"></el-input><br/>
-      员工职称: <el-input  class="organization-btn" placeholder="请输入内容"></el-input><br/>
-      员工编号: <el-input  class="organization-btn" placeholder="请输入内容"></el-input><br/>
-      职位:   <el-select v-model="value" placeholder="请选择">
-      <el-option
-        class="organization-btn"
-        v-for="item in options"
-        :key="item.value"
-        :label="item.label"
-        :value="item.value">
-      </el-option>
-    </el-select><br/>
-      入职时间:
-      <el-date-picker
-        class="organization-btn"
-        v-model="value2"
-        align="right"
-        type="date"
-        placeholder="选择日期"
-        :picker-options="pickerOptions1">
-      </el-date-picker>
-      <br/>
-      职位状态:<el-radio-group class="organization-btn" v-model="isEmployee" size="small">
-      <el-radio-button label="在职"></el-radio-button>
-      <el-radio-button label="离职" ></el-radio-button>
-    </el-radio-group>
-      <br/>
-      <br/>
-      <el-button type="primary" width="100px" size="mini" round>保存</el-button>
-      <el-button  size="mini" round>取消</el-button>
-    </div>
+<router-view></router-view>
 
   </div>
 </template>
 <script>
-  let pickerOptions1={
-      disabledDate(time) {
-      return time.getTime() > Date.now();
-    },
-    shortcuts: [{
-      text: '今天',
-      onClick(picker) {
-      picker.$emit('pick', new Date());
-    }
-  }, {
-    text: '昨天',
-      onClick(picker) {
-      const date = new Date();
-      date.setTime(date.getTime() - 3600 * 1000 * 24);
-      picker.$emit('pick', date);
-    }
-  }, {
-    text: '一周前',
-      onClick(picker) {
-      const date = new Date();
-      date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
-      picker.$emit('pick', date);
-    }
-  }]
-  };
-  export default {
-    data() {
-      return {
-        pickerOptions1,
-        value2:"",
-        isEmployee:"在职"
-      }
-    }
+    export default {
+
+
   }
 </script>
 <style scoped>
 .left{
   float: left;
-  width:200px;
+  width:20%;
   height: 500px;
   border-right: solid 1px gray;
 }
   .organization{
     margin-top: 10px;
+    height: 600px;
   }
-  .organization-btn{
-    width: 300px;
-    margin: 10px;
+
+  .deptList{
+    overflow: scroll;
+    height: 100%;
+    float: left;
+  }
+  .deptList li
+  {
+    width: 50%;
+    line-height: 30px;
+    border-bottom: solid 1px gray;
   }
 </style>
